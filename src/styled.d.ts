@@ -32,7 +32,9 @@ interface IThemeColors {
 }
 interface IThemeSizes {
   stepSize: number
-  borderRadius: number
+
+  sBorderRadius
+  nBorderRadius: number
 
   h1FontSize: number
   h1LineHeight: number
@@ -89,8 +91,8 @@ interface IThemeSizes {
   boldFontWeight: number
 }
 interface IThemeEffects {
-  _1dp: string
-  _8dp: string
+  _01dp: string
+  _08dp: string
 
   primaryShadow: string
   accentShadow: string
