@@ -18,6 +18,20 @@ const ButtonStyled = styled.button.attrs<IProps>((props: IProps) => ({
     border: 1px solid ${theme.colors.primaryColor};
     cursor: pointer;
     border-radius: ${theme.sizes.nBorderRadius}px;
+    transform-origin: center center;
+    transition: ${theme.effects.defaultTransition};
+
+    &:hover {
+      background-color: ${theme.colors.hoverPrimaryColor};
+      border: 1px solid ${theme.colors.hoverPrimaryColor};
+      box-shadow: ${theme.effects._01dp};
+    }
+    &:active {
+      background-color: ${theme.colors.hoverPrimaryColor};
+      border: 1px solid ${theme.colors.hoverPrimaryColor};
+      box-shadow: none;
+      transform: scale(0.98);
+    }
   `}
 `
 

@@ -103,6 +103,14 @@ export const DarkTheme: DefaultTheme = {
       '0px 4px 4px rgba(0, 0, 0, 0.25), 0px 8px 10px rgba(0, 0, 0, 0.14), 0px 3px 14px rgba(0, 0, 0, 0.12)',
     primaryShadow: '',
     accentShadow: '',
+    defaultTransition: 'all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1)',
+  },
+  mediaQueries: {
+    desktop: '(min-width: 1200px)',
+    laptop: '(min-width: 992px) and (max-width: 1199px)',
+    tablet: '(min-width: 768px) and (max-width: 991px)',
+    phablet: '(min-width: 576px) and (max-width: 767px)',
+    mobile: '(max-width: 575px)',
   },
 }
 

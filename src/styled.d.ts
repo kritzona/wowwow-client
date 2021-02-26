@@ -100,6 +100,15 @@ interface IThemeEffects {
 
   primaryShadow: string
   accentShadow: string
+
+  defaultTransition: string
+}
+interface IThemeMediaQueries {
+  desktop: string
+  laptop: string
+  tablet: string
+  phablet: string
+  mobile: string
 }
 
 declare module 'styled-components' {
@@ -108,5 +117,6 @@ declare module 'styled-components' {
     colors: IThemeColors
     sizes: IThemeSizes
     effects: IThemeEffects
+    mediaQueries: IThemeMediaQueries
   }
 }
