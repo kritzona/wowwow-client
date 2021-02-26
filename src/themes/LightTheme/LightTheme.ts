@@ -22,6 +22,9 @@ export const LightTheme: DefaultTheme = {
     greenColor: '#27AE60',
     blueColor: '#2F80ED',
 
+    whiteColor: '#FAFAFA',
+    blackColor: '#212121',
+
     _900Color: '#212121',
     _800Color: '#424242',
     _700Color: '#616161',

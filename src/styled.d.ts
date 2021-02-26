@@ -20,6 +20,9 @@ interface IThemeColors {
   greenColor: string
   blueColor: string
 
+  whiteColor: string
+  blackColor: string
+
   _900Color: string
   _800Color: string
   _700Color: string
