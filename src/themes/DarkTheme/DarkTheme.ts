@@ -93,6 +93,7 @@ export const DarkTheme: DefaultTheme = {
     olLineHeight: 14.6,
 
     regularFontWeight: 400,
+    mediumFontWeight: 500,
     boldFontWeight: 700,
   },
   effects: {

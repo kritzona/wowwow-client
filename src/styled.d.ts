@@ -91,6 +91,7 @@ interface IThemeSizes {
   olLineHeight: number
 
   regularFontWeight: number
+  mediumFontWeight: number
   boldFontWeight: number
 }
 interface IThemeEffects {
