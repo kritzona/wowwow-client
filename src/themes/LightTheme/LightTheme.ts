@@ -39,7 +39,7 @@ export const LightTheme: DefaultTheme = {
     stepSize: 8,
 
     sBorderRadius: 4,
-    nBorderRadius: 12,
+    nBorderRadius: 16,
 
     h1FontSize: 56,
     h1LineHeight: 61.6,
@@ -103,6 +103,8 @@ export const LightTheme: DefaultTheme = {
       '0px 4px 4px rgba(0, 0, 0, 0.25), 0px 8px 10px rgba(0, 0, 0, 0.14), 0px 3px 14px rgba(0, 0, 0, 0.12)',
     primaryShadow: '',
     accentShadow: '',
+    contentShadow:
+      '0px -12px 36px rgb(0 0 0 / 14%), 0px -16px 17px rgb(0 0 0 / 12%)',
     defaultTransition: 'all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1)',
   },
   mediaQueries: {

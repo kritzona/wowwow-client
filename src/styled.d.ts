@@ -100,6 +100,7 @@ interface IThemeEffects {
 
   primaryShadow: string
   accentShadow: string
+  contentShadow: string
 
   defaultTransition: string
 }

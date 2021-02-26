@@ -14,6 +14,8 @@ const GlobalStyle = createGlobalStyle<IProps>`
       margin: 0;
       padding: 0;
       font-family: 'Roboto', sans-serif;
+      background-color: ${theme.colors._100Color};
+      color: ${theme.colors._900Color};
 
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;

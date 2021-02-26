@@ -12,6 +12,7 @@ export const Heading1 = styled.h1<IProps>`
     font-style: normal;
     font-stretch: normal;
     line-height: ${theme.sizes.h1LineHeight}px;
+    margin: 0;
   `}
 `
 export const Heading2 = styled.h2<IProps>`
@@ -21,6 +22,7 @@ export const Heading2 = styled.h2<IProps>`
     font-style: normal;
     font-stretch: normal;
     line-height: ${theme.sizes.h2LineHeight}px;
+    margin: 0;
   `}
 `
 export const Heading3 = styled.h3<IProps>`
@@ -30,6 +32,7 @@ export const Heading3 = styled.h3<IProps>`
     font-style: normal;
     font-stretch: normal;
     line-height: ${theme.sizes.h3LineHeight}px;
+    margin: 0;
   `}
 `
 export const Heading4 = styled.h4<IProps>`
@@ -39,6 +42,7 @@ export const Heading4 = styled.h4<IProps>`
     font-style: normal;
     font-stretch: normal;
     line-height: ${theme.sizes.h4LineHeight}px;
+    margin: 0;
   `}
 `
 export const Heading5 = styled.h5<IProps>`
@@ -48,6 +52,7 @@ export const Heading5 = styled.h5<IProps>`
     font-style: normal;
     font-stretch: normal;
     line-height: ${theme.sizes.h5LineHeight}px;
+    margin: 0;
   `}
 `
 export const Heading6 = styled.h6<IProps>`
@@ -57,6 +62,7 @@ export const Heading6 = styled.h6<IProps>`
     font-style: normal;
     font-stretch: normal;
     line-height: ${theme.sizes.h6LineHeight}px;
+    margin: 0;
   `}
 `
 
