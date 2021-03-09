@@ -18,6 +18,7 @@ const ButtonStyled = styled.button.attrs<IProps>((props: IProps) => ({
     border-radius: ${theme.sizes.nBorderRadius}px;
     transform-origin: center center;
     transition: ${theme.effects.defaultTransition};
+    -webkit-tap-highlight-color: transparent;
 
     ${(!color || color === 'primary') &&
     css`
@@ -48,6 +49,62 @@ const ButtonStyled = styled.button.attrs<IProps>((props: IProps) => ({
       
       box-shadow: ${theme.effects._01dp};
     }
+
+    @media ${theme.mediaQueries.tablet} {
+      &:hover {
+        ${(!color || color === 'primary') &&
+        css`
+          background-color: ${theme.colors.primaryColor};
+          border: 1px solid ${theme.colors.primaryColor};
+          color: ${theme.colors.whiteColor};
+        `}
+        ${color === 'accent' &&
+        css`
+          background-color: ${theme.colors.accentColor};
+          border: 1px solid ${theme.colors.accentColor};
+          color: ${theme.colors.whiteColor};
+        `}
+      
+        box-shadow: ${theme.effects._01dp};
+      }
+    }
+    @media ${theme.mediaQueries.phablet} {
+      &:hover {
+        ${(!color || color === 'primary') &&
+        css`
+          background-color: ${theme.colors.primaryColor};
+          border: 1px solid ${theme.colors.primaryColor};
+          color: ${theme.colors.whiteColor};
+        `}
+        ${color === 'accent' &&
+        css`
+          background-color: ${theme.colors.accentColor};
+          border: 1px solid ${theme.colors.accentColor};
+          color: ${theme.colors.whiteColor};
+        `}
+      
+        box-shadow: ${theme.effects._01dp};
+      }
+    }
+    @media ${theme.mediaQueries.mobile} {
+      &:hover {
+        ${(!color || color === 'primary') &&
+        css`
+          background-color: ${theme.colors.primaryColor};
+          border: 1px solid ${theme.colors.primaryColor};
+          color: ${theme.colors.whiteColor};
+        `}
+        ${color === 'accent' &&
+        css`
+          background-color: ${theme.colors.accentColor};
+          border: 1px solid ${theme.colors.accentColor};
+          color: ${theme.colors.whiteColor};
+        `}
+      
+        box-shadow: ${theme.effects._01dp};
+      }
+    }
+
     &:active {
       ${(!color || color === 'primary') &&
       css`
@@ -63,7 +120,7 @@ const ButtonStyled = styled.button.attrs<IProps>((props: IProps) => ({
       `}
 
       box-shadow: none;
-      transform: scale(0.98);
+      transform: scale(0.95);
     }
   `}
 `

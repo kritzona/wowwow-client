@@ -15,5 +15,6 @@ export const BottomNavBarStyled = styled.div<IProps>`
     z-index: 1000;
     border-top-left-radius: ${theme.sizes.nBorderRadius}px;
     border-top-right-radius: ${theme.sizes.nBorderRadius}px;
+    background-color: ${theme.colors._100Color};
   `}
 `
