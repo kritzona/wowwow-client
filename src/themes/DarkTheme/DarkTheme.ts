@@ -105,6 +105,8 @@ export const DarkTheme: DefaultTheme = {
     accentShadow: '',
     contentShadow:
       '0px -12px 36px rgb(0 0 0 / 14%), 0px -16px 17px rgb(0 0 0 / 12%)',
+    neomorphShadow:
+      'drop-shadow(-6px -6px 16px rgba(255, 255, 255, 0.25)) drop-shadow(6px 6px 12px rgba(209, 205, 199, 0.25))',
     defaultTransition: 'all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1)',
   },
   mediaQueries: {

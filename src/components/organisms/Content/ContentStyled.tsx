@@ -8,7 +8,7 @@ export const ContentStyled = styled.main<IProps>``
 export const ContentWrapperStyled = styled.div<IProps>`
   ${({ theme }) => css`
     background-color: ${theme.colors._100Color};
-    box-shadow: ${theme.effects.contentShadow};
+    filter: ${theme.effects.neomorphShadow};
     border-radius: ${theme.sizes.nBorderRadius}px;
 
     padding: 48px 16px;
@@ -19,7 +19,7 @@ export const ContentWrapperStyled = styled.div<IProps>`
     }
     @media ${theme.mediaQueries.mobile} {
       padding: 20px 16px;
-      box-shadow: none;
+      filter: none;
     }
   `}
 `

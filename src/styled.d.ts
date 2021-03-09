@@ -102,6 +102,8 @@ interface IThemeEffects {
   accentShadow: string
   contentShadow: string
 
+  neomorphShadow: string
+
   defaultTransition: string
 }
 interface IThemeMediaQueries {
