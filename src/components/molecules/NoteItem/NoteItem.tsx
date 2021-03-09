@@ -1,7 +1,8 @@
 import React from 'react'
 import ThumbNote from '../ThumbNote/ThumbNote'
-import { NoteItemStyled } from './NoteItemStyled'
+import { NoteItemCtxMenuStyled, NoteItemStyled } from './NoteItemStyled'
 import CardItem from '../CardItem/CardItem'
+import CardCtxMenu from '../CardCtxMenu/CardCtxMenu'
 
 interface IProps {}
 
@@ -11,6 +12,9 @@ const NoteItem = (props: IProps) => {
       <CardItem>
         <ThumbNote></ThumbNote>
       </CardItem>
+      <NoteItemCtxMenuStyled>
+        <CardCtxMenu></CardCtxMenu>
+      </NoteItemCtxMenuStyled>
     </NoteItemStyled>
   )
 }
