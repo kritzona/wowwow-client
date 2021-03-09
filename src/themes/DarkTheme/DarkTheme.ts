@@ -15,8 +15,8 @@ export const DarkTheme: DefaultTheme = {
     strokePrimaryColor: '#433466',
     strokeAccentColor: '#FFAF4F',
 
-    shadowPrimaryColor: 'rgba(67, 52, 102, 0.8)',
-    shadowAccentColor: 'rgba(255, 175, 79, 0.8)',
+    shadowPrimaryColor: 'rgba(67, 52, 102, 0.1)',
+    shadowAccentColor: 'rgba(255, 175, 79, 0.1)',
 
     redColor: '#EB5757',
     greenColor: '#27AE60',

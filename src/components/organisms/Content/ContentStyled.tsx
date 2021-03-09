@@ -10,6 +10,7 @@ export const ContentWrapperStyled = styled.div<IProps>`
     background-color: ${theme.colors._100Color};
     filter: ${theme.effects.neomorphShadow};
     border-radius: ${theme.sizes.nBorderRadius}px;
+    margin-bottom: ${56 + theme.sizes.stepSize * 2}px;
 
     padding: 48px 16px;
     margin-top: -${theme.sizes.nBorderRadius}px;
