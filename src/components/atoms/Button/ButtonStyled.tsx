@@ -62,7 +62,7 @@ const ButtonStyled = styled.button.attrs<IProps>((props: IProps) => ({
         css`
           background-color: ${theme.colors.accentColor};
           border: 1px solid ${theme.colors.accentColor};
-          color: ${theme.colors.whiteColor};
+          color: ${theme.colors.primaryColor};
         `}
       
         box-shadow: ${theme.effects._01dp};
@@ -80,7 +80,7 @@ const ButtonStyled = styled.button.attrs<IProps>((props: IProps) => ({
         css`
           background-color: ${theme.colors.accentColor};
           border: 1px solid ${theme.colors.accentColor};
-          color: ${theme.colors.whiteColor};
+          color: ${theme.colors.primaryColor};
         `}
       
         box-shadow: ${theme.effects._01dp};
@@ -98,7 +98,7 @@ const ButtonStyled = styled.button.attrs<IProps>((props: IProps) => ({
         css`
           background-color: ${theme.colors.accentColor};
           border: 1px solid ${theme.colors.accentColor};
-          color: ${theme.colors.whiteColor};
+          color: ${theme.colors.primaryColor};
         `}
       
         box-shadow: ${theme.effects._01dp};

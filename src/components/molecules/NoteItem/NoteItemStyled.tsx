@@ -9,6 +9,14 @@ export const NoteItemStyled = styled.div<IProps>`
     position: relative;
   `}
 `
+export const NoteItemLikeStatusStyled = styled.div<IProps>`
+  ${({ theme }) => css`
+    position: absolute;
+    top: -8px;
+    right: 0;
+    z-index: 100;
+  `}
+`
 export const NoteItemCtxMenuStyled = styled.div<IProps>`
   ${({ theme }) => css`
     width: 100%;
