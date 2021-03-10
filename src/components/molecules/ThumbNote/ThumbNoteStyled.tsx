@@ -14,6 +14,17 @@ export const ThumbNoteTitleStyled = styled.div<IProps>`
 `
 export const ThumbNoteContentStyled = styled.div<IProps>`
   ${({ theme }) => css`
+    width: 70%;
     color: ${theme.colors._600Color};
+
+    @media ${theme.mediaQueries.tablet} {
+      width: 80%;
+    }
+    @media ${theme.mediaQueries.phablet} {
+      width: 100%;
+    }
+    @media ${theme.mediaQueries.mobile} {
+      width: 100%;
+    }
   `}
 `

@@ -15,5 +15,14 @@ export const NoteItemCtxMenuStyled = styled.div<IProps>`
     position: absolute;
     bottom: 0;
     left: 0;
+    z-index: 100;
+  `}
+`
+export const NoteItemDateLabelStyled = styled.div<IProps>`
+  ${({ theme }) => css`
+    position: absolute;
+    top: 0;
+    left: 6px;
+    z-index: 100;
   `}
 `
