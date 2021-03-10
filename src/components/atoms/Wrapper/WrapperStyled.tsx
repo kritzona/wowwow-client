@@ -13,6 +13,7 @@ const WrapperStyled = styled.div<IProps>`
     padding: ${paddingY ? '48px' : '0'}
       ${paddingX === undefined || paddingX ? '16px' : '0'};
     box-sizing: border-box;
+    position: relative;
 
     @media ${theme.mediaQueries.desktop} {
       padding: ${paddingY ? '48px' : '0'}

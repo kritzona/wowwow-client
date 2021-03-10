@@ -32,6 +32,7 @@ export const NavBarItemStyled = styled.div<IProps>`
     user-select: none;
     color: ${theme.colors.primaryColor};
     transition: ${theme.effects.defaultTransition};
+    -webkit-tap-highlight-color: transparent;
 
     &:hover {
       background-color: ${theme.colors.primaryColor};

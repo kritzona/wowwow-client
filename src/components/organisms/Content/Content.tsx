@@ -1,5 +1,9 @@
 import React from 'react'
-import { ContentStyled, ContentWrapperStyled } from './ContentStyled'
+import {
+  ContentStyled,
+  ContentWrapperStyled,
+  ContentCogriStyled,
+} from './ContentStyled'
 import Wrapper from '../../atoms/Wrapper/Wrapper'
 
 interface IProps {
@@ -10,7 +14,10 @@ const Content = (props: IProps) => {
   return (
     <ContentStyled>
       <Wrapper paddingX={false}>
-        <ContentWrapperStyled>{props.children}</ContentWrapperStyled>
+        <ContentWrapperStyled>
+          {props.children}
+          <ContentCogriStyled></ContentCogriStyled>
+        </ContentWrapperStyled>
       </Wrapper>
     </ContentStyled>
   )

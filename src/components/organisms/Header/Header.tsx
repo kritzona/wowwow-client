@@ -1,42 +1,44 @@
 import React from 'react'
-import HeaderStyled from './HeaderStyled'
+import HeaderStyled, {
+  HeaderLogoStyled,
+  HeaderTitleWithLogoStyled,
+  HeaderTopStyled,
+  HeaderBottomStyled,
+} from './HeaderStyled'
 import Wrapper from '../../atoms/Wrapper/Wrapper'
 import Row from '../../atoms/Row/Row'
 import Column from '../../atoms/Column/Column'
 import Button from '../../atoms/Button/Button'
+import Text from '../../atoms/Text/Text'
 
 interface IProps {}
 
 const Header = (props: IProps) => {
   return (
     <HeaderStyled>
-      <Wrapper paddingY={true}>
-        <Row gutter={true}>
-          <Column size={4} mobileSize={6}>
-            <Button color="accent">Нажми на меня</Button>
-          </Column>
-          <Column size={4} mobileSize={6}>
-            <Button>Нажми на меня</Button>
-          </Column>
-          <Column size={4} mobileSize={6}>
-            <Button>Нажми на меня</Button>
-          </Column>
-          <Column size={4} mobileSize={6}>
-            <Button>Нажми на меня</Button>
-          </Column>
-          <Column size={4} mobileSize={6}>
-            <Button>Нажми на меня</Button>
-          </Column>
-          <Column size={4} mobileSize={6}>
-            <Button>Нажми на меня</Button>
-          </Column>
-          <Column size={4} mobileSize={6}>
-            <Button>Нажми на меня</Button>
-          </Column>
-          <Column size={4} mobileSize={6}>
-            <Button>Нажми на меня</Button>
-          </Column>
-        </Row>
+      <Wrapper paddingY={false}>
+        <HeaderTopStyled>
+          <Row gutter={true}>
+            <Column size={12}>
+              <HeaderTitleWithLogoStyled>
+                <HeaderLogoStyled></HeaderLogoStyled>
+                <Text type="heading-4">UI Kit</Text>
+              </HeaderTitleWithLogoStyled>
+            </Column>
+          </Row>
+        </HeaderTopStyled>
+        <HeaderBottomStyled>
+          <Row gutter={true}>
+            <Column size={12}>
+              <Text type="subtitle-1">Все атомы, молекулы и тд.</Text>
+            </Column>
+          </Row>
+          <Row gutter={true}>
+            <Column size={12}>
+              <Text type="caption">Нужное и ненужное :)</Text>
+            </Column>
+          </Row>
+        </HeaderBottomStyled>
       </Wrapper>
     </HeaderStyled>
   )
