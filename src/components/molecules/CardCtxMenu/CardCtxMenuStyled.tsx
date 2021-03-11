@@ -17,6 +17,7 @@ export const CardCtxMenuStyled = styled.div<IProps>`
     min-height: 28px;
     border-radius: ${theme.sizes.nBorderRadius}px;
     padding: 2px;
+    box-shadow: ${theme.effects.accentShadow};
 
     & > *:not(:first-child) {
       margin-left: ${theme.sizes.stepSize * 3}px;

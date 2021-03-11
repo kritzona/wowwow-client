@@ -13,16 +13,16 @@ const BottomNavBar = (props: IProps) => {
       <Wrapper>
         <Row>
           <Column desktopSize={3}>
-            <NavBarItem></NavBarItem>
+            <NavBarItem title="Главная"></NavBarItem>
           </Column>
           <Column desktopSize={3}>
-            <NavBarItem></NavBarItem>
+            <NavBarItem title="Заметки"></NavBarItem>
           </Column>
           <Column desktopSize={3}>
-            <NavBarItem></NavBarItem>
+            <NavBarItem title="Создать"></NavBarItem>
           </Column>
           <Column desktopSize={3}>
-            <NavBarItem></NavBarItem>
+            <NavBarItem title="О нас"></NavBarItem>
           </Column>
         </Row>
       </Wrapper>

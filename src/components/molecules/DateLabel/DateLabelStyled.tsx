@@ -13,5 +13,6 @@ export const DateLabelStyled = styled.div<IProps>`
     padding-left: ${theme.sizes.olFontSize}px;
     padding-right: ${theme.sizes.olFontSize}px;
     font-size: 0;
+    box-shadow: ${theme.effects._01dp};
   `}
 `

@@ -6,14 +6,19 @@ import {
   NavBarItemTitleStyled,
 } from './NavBarItemStyled'
 
-interface IProps {}
+interface IProps {
+  title: string
+  primaryIconSource?: string
+  accentIconSource?: string
+  whiteIconSource?: string
+}
 
 const NavBarItem = (props: IProps) => {
   return (
     <NavBarItemStyled>
       <NavBarItemIconStyled></NavBarItemIconStyled>
       <NavBarItemTitleStyled>
-        <Text type="caption">Home</Text>
+        <Text type="caption">{props.title}</Text>
       </NavBarItemTitleStyled>
     </NavBarItemStyled>
   )
