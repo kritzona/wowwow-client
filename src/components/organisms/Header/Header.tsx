@@ -22,7 +22,7 @@ const Header = (props: IProps) => {
             <Column size={12}>
               <HeaderTitleWithLogoStyled>
                 <HeaderLogoStyled></HeaderLogoStyled>
-                <Text type="heading-1">UI Kit</Text>
+                <Text type="heading-1">WowWow</Text>
               </HeaderTitleWithLogoStyled>
             </Column>
           </Row>
@@ -30,12 +30,12 @@ const Header = (props: IProps) => {
         <HeaderBottomStyled>
           <Row gutter={true}>
             <Column size={12}>
-              <Text type="subtitle-1">Все атомы, молекулы и тд.</Text>
+              <Text type="subtitle-1">Приложение для создания заметок</Text>
             </Column>
           </Row>
           <Row gutter={true}>
             <Column size={12}>
-              <Text type="caption">Нужное и ненужное :)</Text>
+              <Text type="caption">GitHub: @kritzona</Text>
             </Column>
           </Row>
         </HeaderBottomStyled>

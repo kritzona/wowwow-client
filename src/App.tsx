@@ -15,7 +15,7 @@ const App = (props: IProps) => {
     <AppStyled>
       <Header></Header>
       <Content>
-        <Text type="heading-2">Заголовок</Text>
+        <Text type="heading-2">Все заметки</Text>
         <br />
         <Row gutter={true}>
           <Column
