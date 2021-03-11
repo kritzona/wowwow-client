@@ -8,7 +8,6 @@ import HeaderStyled, {
 import Wrapper from '../../atoms/Wrapper/Wrapper'
 import Row from '../../atoms/Row/Row'
 import Column from '../../atoms/Column/Column'
-import Button from '../../atoms/Button/Button'
 import Text from '../../atoms/Text/Text'
 
 interface IProps {}
