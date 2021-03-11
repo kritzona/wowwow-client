@@ -7,6 +7,7 @@ import BottomNavBar from './components/organisms/BottomNavBar/BottomNavBar'
 import NoteItem from './components/molecules/NoteItem/NoteItem'
 import Row from './components/atoms/Row/Row'
 import Column from './components/atoms/Column/Column'
+import NoteCreator from './components/molecules/NoteCreator/NoteCreator'
 
 interface IProps {}
 
@@ -57,6 +58,16 @@ const App = (props: IProps) => {
             mobileSize={6}
           >
             <NoteItem></NoteItem>
+          </Column>
+          <Column
+            size={3}
+            desktopSize={3}
+            laptopSize={3}
+            tabletSize={4}
+            phabletSize={6}
+            mobileSize={6}
+          >
+            <NoteCreator></NoteCreator>
           </Column>
         </Row>
       </Content>
