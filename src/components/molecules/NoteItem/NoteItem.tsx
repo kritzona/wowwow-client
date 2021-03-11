@@ -19,8 +19,8 @@ const NoteItem = (props: IProps) => {
   const handleClick = () => (props.onClick ? props.onClick() : null)
 
   return (
-    <NoteItemStyled onClick={() => handleClick()}>
-      <CardItem>
+    <NoteItemStyled>
+      <CardItem onClick={() => handleClick()}>
         <ThumbNote></ThumbNote>
       </CardItem>
       <NoteItemLikeStatusStyled>
