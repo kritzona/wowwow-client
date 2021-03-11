@@ -34,7 +34,9 @@ const Header = (props: IProps) => {
           </Row>
           <Row gutter={true}>
             <Column size={12}>
-              <Text type="caption">GitHub: @kritzona</Text>
+              <Text type="caption">
+                Rep: https://github.com/kritzona/wowwow.local
+              </Text>
             </Column>
           </Row>
         </HeaderBottomStyled>
