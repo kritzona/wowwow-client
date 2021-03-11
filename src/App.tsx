@@ -8,6 +8,7 @@ import NoteItem from './components/molecules/NoteItem/NoteItem'
 import Row from './components/atoms/Row/Row'
 import Column from './components/atoms/Column/Column'
 import NoteCreator from './components/molecules/NoteCreator/NoteCreator'
+import Modal from './components/molecules/Modal/Modal'
 
 interface IProps {}
 
@@ -72,6 +73,7 @@ const App = (props: IProps) => {
         </Row>
       </Content>
       <BottomNavBar></BottomNavBar>
+      <Modal></Modal>
     </AppStyled>
   )
 }
