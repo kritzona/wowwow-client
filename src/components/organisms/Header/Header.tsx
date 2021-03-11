@@ -22,7 +22,7 @@ const Header = (props: IProps) => {
             <Column size={12}>
               <HeaderTitleWithLogoStyled>
                 <HeaderLogoStyled></HeaderLogoStyled>
-                <Text type="heading-4">UI Kit</Text>
+                <Text type="heading-1">UI Kit</Text>
               </HeaderTitleWithLogoStyled>
             </Column>
           </Row>

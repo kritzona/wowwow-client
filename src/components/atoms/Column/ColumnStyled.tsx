@@ -63,22 +63,34 @@ const ColumnStyled = styled.div<IProps>`
 
     return css`
       display: grid;
+      display: -ms-grid;
+
       grid-column: span ${desktopColumnSize};
+      -ms-grid-column-span: ${desktopColumnSize};
 
       @media ${theme.mediaQueries.desktop} {
         grid-column: span ${desktopColumnSize <= 12 ? desktopColumnSize : 12};
+        -ms-grid-column-span: ${desktopColumnSize <= 12
+          ? desktopColumnSize
+          : 12};
       }
       @media ${theme.mediaQueries.laptop} {
         grid-column: span ${laptopColumnSize <= 12 ? laptopColumnSize : 12};
+        -ms-grid-column-span: ${laptopColumnSize <= 12 ? laptopColumnSize : 12};
       }
       @media ${theme.mediaQueries.tablet} {
         grid-column: span ${tabletColumnSize <= 12 ? tabletColumnSize : 12};
+        -ms-grid-column-span: ${tabletColumnSize <= 12 ? tabletColumnSize : 12};
       }
       @media ${theme.mediaQueries.phablet} {
         grid-column: span ${phabletColumnSize <= 12 ? phabletColumnSize : 12};
+        -ms-grid-column-span: ${phabletColumnSize <= 12
+          ? phabletColumnSize
+          : 12};
       }
       @media ${theme.mediaQueries.mobile} {
         grid-column: span ${mobileColumnSize <= 12 ? mobileColumnSize : 12};
+        -ms-grid-column-span: ${mobileColumnSize <= 12 ? mobileColumnSize : 12};
       }
     `
   }}

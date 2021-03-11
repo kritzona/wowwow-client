@@ -9,6 +9,7 @@ export const DateLabelStyled = styled.div<IProps>`
     background-color: ${theme.colors.primaryColor};
     color: ${theme.colors.whiteColor};
     border-radius: ${theme.sizes.sBorderRadius}px;
+    padding: 2px;
     padding-left: ${theme.sizes.olFontSize}px;
     padding-right: ${theme.sizes.olFontSize}px;
     font-size: 0;

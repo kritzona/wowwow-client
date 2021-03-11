@@ -16,8 +16,8 @@ const HeaderStyled = styled.header<IProps>`
 `
 export const HeaderLogoStyled = styled.div<IProps>`
   ${({ theme }) => css`
-    width: 20px;
-    height: 20px;
+    width: 32px;
+    height: 32px;
     background-image: url(${CatAccentIconSource});
     background-repeat: no-repeat;
     background-position: center center;

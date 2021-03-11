@@ -41,56 +41,56 @@ export const LightTheme: DefaultTheme = {
     sBorderRadius: 4,
     nBorderRadius: 16,
 
-    h1FontSize: 56,
-    h1LineHeight: 61.6,
+    h1FontSize: 48.83,
+    h1LineHeight: 48.83 * 1.3,
 
-    h2FontSize: 48,
-    h2LineHeight: 52.8,
+    h2FontSize: 39.06,
+    h2LineHeight: 39.06 * 1.3,
 
-    h3FontSize: 40,
-    h3LineHeight: 44,
+    h3FontSize: 31.25,
+    h3LineHeight: 31.25 * 1.3,
 
-    h4FontSize: 32,
-    h4LineHeight: 35.2,
+    h4FontSize: 25,
+    h4LineHeight: 25 * 1.3,
 
-    h5FontSize: 24,
-    h5LineHeight: 26.4,
+    h5FontSize: 20,
+    h5LineHeight: 20 * 1.3,
 
     h6FontSize: 20,
-    h6LineHeight: 22,
+    h6LineHeight: 20 * 1.3,
 
     tlFontSize: 20,
-    tlLineHeight: 28,
+    tlLineHeight: 20,
 
     tmFontSize: 18,
-    tmLineHeight: 25.2,
+    tmLineHeight: 18,
 
     tnFontSize: 16,
-    tnLineHeight: 22.4,
+    tnLineHeight: 16,
 
     tsFontSize: 14,
-    tsLineHeight: 19.6,
+    tsLineHeight: 14,
 
     st1FontSize: 16,
-    st1LineHeight: 22.4,
+    st1LineHeight: 16,
 
     st2FontSize: 14,
-    st2LineHeight: 19.6,
+    st2LineHeight: 14,
 
     cptnFontSize: 12,
-    cptnLineHeight: 16.6,
+    cptnLineHeight: 12,
 
     body1FontSize: 16,
-    body1LineHeight: 22.4,
+    body1LineHeight: 16,
 
     body2FontSize: 14,
-    body2LineHeight: 19.6,
+    body2LineHeight: 14,
 
     btnFontSize: 14,
-    btnLineHeight: 19.6,
+    btnLineHeight: 14,
 
     olFontSize: 10,
-    olLineHeight: 14.6,
+    olLineHeight: 10,
 
     regularFontWeight: 400,
     mediumFontWeight: 500,

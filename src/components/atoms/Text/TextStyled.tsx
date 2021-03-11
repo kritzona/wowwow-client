@@ -13,6 +13,15 @@ export const Heading1 = styled.h1<IProps>`
     font-stretch: normal;
     line-height: ${theme.sizes.h1LineHeight}px;
     margin: 0;
+
+    @media ${theme.mediaQueries.phablet} {
+      font-size: ${theme.sizes.h1FontSize / 1.3}px;
+      line-height: ${theme.sizes.h1LineHeight / 1.3}px;
+    }
+    @media ${theme.mediaQueries.mobile} {
+      font-size: ${theme.sizes.h1FontSize / 1.3}px;
+      line-height: ${theme.sizes.h1LineHeight / 1.3}px;
+    }
   `}
 `
 export const Heading2 = styled.h2<IProps>`
@@ -23,6 +32,15 @@ export const Heading2 = styled.h2<IProps>`
     font-stretch: normal;
     line-height: ${theme.sizes.h2LineHeight}px;
     margin: 0;
+
+    @media ${theme.mediaQueries.phablet} {
+      font-size: ${theme.sizes.h2FontSize / 1.3}px;
+      line-height: ${theme.sizes.h2LineHeight / 1.3}px;
+    }
+    @media ${theme.mediaQueries.mobile} {
+      font-size: ${theme.sizes.h2FontSize / 1.3}px;
+      line-height: ${theme.sizes.h2FontSize / 1.3}px;
+    }
   `}
 `
 export const Heading3 = styled.h3<IProps>`
@@ -33,6 +51,15 @@ export const Heading3 = styled.h3<IProps>`
     font-stretch: normal;
     line-height: ${theme.sizes.h3LineHeight}px;
     margin: 0;
+
+    @media ${theme.mediaQueries.phablet} {
+      font-size: ${theme.sizes.h3FontSize / 1.3}px;
+      line-height: ${theme.sizes.h3LineHeight / 1.3}px;
+    }
+    @media ${theme.mediaQueries.mobile} {
+      font-size: ${theme.sizes.h3FontSize / 1.3}px;
+      line-height: ${theme.sizes.h3LineHeight / 1.3}px;
+    }
   `}
 `
 export const Heading4 = styled.h4<IProps>`
