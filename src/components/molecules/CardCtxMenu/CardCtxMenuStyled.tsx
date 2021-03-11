@@ -16,7 +16,7 @@ export const CardCtxMenuStyled = styled.div<IProps>`
     color: ${theme.colors.whiteColor};
     min-height: 28px;
     border-radius: ${theme.sizes.nBorderRadius}px;
-    padding: 2px;
+    padding: 6px;
     box-shadow: ${theme.effects.accentShadow};
 
     & > *:not(:first-child) {
