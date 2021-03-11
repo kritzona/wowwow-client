@@ -15,8 +15,16 @@ interface IProps {
 
 const NavBarItem = (props: IProps) => {
   return (
-    <NavBarItemStyled>
-      <NavBarItemIconStyled></NavBarItemIconStyled>
+    <NavBarItemStyled
+      primaryIconSource={props.primaryIconSource}
+      accentIconSource={props.accentIconSource}
+      whiteIconSource={props.whiteIconSource}
+    >
+      <NavBarItemIconStyled
+        primaryIconSource={props.primaryIconSource}
+        accentIconSource={props.accentIconSource}
+        whiteIconSource={props.whiteIconSource}
+      ></NavBarItemIconStyled>
       <NavBarItemTitleStyled>
         <Text type="caption">{props.title}</Text>
       </NavBarItemTitleStyled>
