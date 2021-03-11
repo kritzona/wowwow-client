@@ -16,6 +16,7 @@ export const ModalWrapperStyled = styled.div`
   ${({ theme }) => css`
     min-height: 100px;
     background-color: ${theme.colors._100Color};
+    box-shadow: ${theme.effects._08dp};
   `}
 `
 export const ModalBackgroundStyled = styled.div`

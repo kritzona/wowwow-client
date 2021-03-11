@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import AppStyled from './AppStyled'
 import Header from './components/organisms/Header/Header'
 import Content from './components/organisms/Content/Content'
@@ -13,6 +13,14 @@ import Modal from './components/molecules/Modal/Modal'
 interface IProps {}
 
 const App = (props: IProps) => {
+  const [shownModal, setShownModal] = useState(false)
+
+  const showModal = () => setShownModal(true)
+  const hideModal = () => setShownModal(false)
+
+  const handleOpenNote = () => showModal()
+  const handleCloseModal = () => hideModal()
+
   return (
     <AppStyled>
       <Header></Header>
@@ -28,7 +36,7 @@ const App = (props: IProps) => {
             phabletSize={6}
             mobileSize={6}
           >
-            <NoteItem></NoteItem>
+            <NoteItem onClick={() => handleOpenNote()}></NoteItem>
           </Column>
           <Column
             size={3}
@@ -73,7 +81,7 @@ const App = (props: IProps) => {
         </Row>
       </Content>
       <BottomNavBar></BottomNavBar>
-      <Modal></Modal>
+      {shownModal && <Modal onClose={() => handleCloseModal()}></Modal>}
     </AppStyled>
   )
 }

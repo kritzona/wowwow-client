@@ -10,9 +10,13 @@ import Column from '../../atoms/Column/Column'
 import ModalHeader from './ModalHeader/ModalHeader'
 import ModalContent from './ModalContent/ModalContent'
 
-interface IProps {}
+interface IProps {
+  onClose?: () => void
+}
 
 const Modal = (props: IProps) => {
+  const handleClose = () => (props.onClose ? props.onClose() : null)
+
   return (
     <ModalStyled>
       <ModalBackgroundStyled></ModalBackgroundStyled>
@@ -20,7 +24,7 @@ const Modal = (props: IProps) => {
         <ModalWrapperStyled>
           <Row>
             <Column size={12}>
-              <ModalHeader></ModalHeader>
+              <ModalHeader onClose={() => handleClose()}></ModalHeader>
             </Column>
           </Row>
           <Row>

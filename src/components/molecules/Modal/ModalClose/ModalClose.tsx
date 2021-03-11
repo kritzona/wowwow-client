@@ -1,10 +1,14 @@
 import React from 'react'
 import { ModalCloseStyled } from './ModalCloseStyled'
 
-interface IProps {}
+interface IProps {
+  onClick?: () => void
+}
 
 const ModalClose = (props: IProps) => {
-  return <ModalCloseStyled></ModalCloseStyled>
+  const handleClick = () => (props.onClick ? props.onClick() : null)
+
+  return <ModalCloseStyled onClick={() => handleClick()}></ModalCloseStyled>
 }
 
 export default ModalClose

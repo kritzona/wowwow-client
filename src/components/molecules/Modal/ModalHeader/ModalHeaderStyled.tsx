@@ -14,6 +14,7 @@ export const ModalHeaderStyled = styled.div<IProps>`
     justify-content: space-between;
     align-items: center;
     color: ${theme.colors.whiteColor};
+    box-shadow: ${theme.effects._01dp};
   `}
 `
 export const ModalHeaderWestStyled = styled.div<IProps>`

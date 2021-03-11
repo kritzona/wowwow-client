@@ -11,11 +11,15 @@ import CardCtxMenu from '../CardCtxMenu/CardCtxMenu'
 import DateLabel from '../DateLabel/DateLabel'
 import LikeStatus from '../LikeStatus/LikeStatus'
 
-interface IProps {}
+interface IProps {
+  onClick?: () => void
+}
 
 const NoteItem = (props: IProps) => {
+  const handleClick = () => (props.onClick ? props.onClick() : null)
+
   return (
-    <NoteItemStyled>
+    <NoteItemStyled onClick={() => handleClick()}>
       <CardItem>
         <ThumbNote></ThumbNote>
       </CardItem>
