@@ -19,7 +19,9 @@ const Modal = (props: IProps) => {
 
   return (
     <ModalStyled>
-      <ModalBackgroundStyled></ModalBackgroundStyled>
+      <ModalBackgroundStyled
+        onClick={() => handleClose()}
+      ></ModalBackgroundStyled>
       <Wrapper paddingX={false}>
         <ModalWrapperStyled>
           <Row>
