@@ -15,10 +15,15 @@ import { INoteItem } from '../../../store/note/types'
 interface IProps {
   data: INoteItem
   onClick?: () => void
+  onRemove?: () => void
+  onToggleFavorite?: () => void
 }
 
 const NoteItem = (props: IProps) => {
   const handleClick = () => (props.onClick ? props.onClick() : null)
+  const handleRemove = () => (props.onRemove ? props.onRemove() : null)
+  const handleToggleFavorite = () =>
+    props.onToggleFavorite ? props.onToggleFavorite() : null
 
   return (
     <NoteItemStyled>
@@ -32,7 +37,10 @@ const NoteItem = (props: IProps) => {
         {props.data.favorite && <LikeStatus></LikeStatus>}
       </NoteItemLikeStatusStyled>
       <NoteItemCtxMenuStyled>
-        <CardCtxMenu></CardCtxMenu>
+        <CardCtxMenu
+          onRemove={() => handleRemove()}
+          onToggleFavorite={() => handleToggleFavorite()}
+        ></CardCtxMenu>
       </NoteItemCtxMenuStyled>
       <NoteItemDateLabelStyled>
         <DateLabel>24.02.2021 14:58</DateLabel>

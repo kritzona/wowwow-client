@@ -10,10 +10,18 @@ import { INoteItem } from '../../../store/note/types'
 interface IProps {
   items: INoteItem[]
   onOpenNote?: () => void
+  onAdd?: () => void
+  onRemove?: (id: string | number) => void
+  onToggleFavorite?: (id: string | number) => void
 }
 
 const Notes = (props: IProps) => {
   const handleOpenNote = () => (props.onOpenNote ? props.onOpenNote() : null)
+  const handleNoteCreatorClick = () => (props.onAdd ? props.onAdd() : null)
+  const handleRemove = (id: string | number) =>
+    props.onRemove ? props.onRemove(id) : null
+  const handleToggleFavorite = (id: string | number) =>
+    props.onToggleFavorite ? props.onToggleFavorite(id) : null
 
   return (
     <NotesStyled>
@@ -30,7 +38,12 @@ const Notes = (props: IProps) => {
             phabletSize={6}
             mobileSize={6}
           >
-            <NoteItem data={item} onClick={() => handleOpenNote()}></NoteItem>
+            <NoteItem
+              data={item}
+              onClick={() => handleOpenNote()}
+              onRemove={() => handleRemove(item.id)}
+              onToggleFavorite={() => handleToggleFavorite(item.id)}
+            ></NoteItem>
           </Column>
         ))}
 
@@ -42,7 +55,7 @@ const Notes = (props: IProps) => {
           phabletSize={6}
           mobileSize={6}
         >
-          <NoteCreator></NoteCreator>
+          <NoteCreator onClick={() => handleNoteCreatorClick()}></NoteCreator>
         </Column>
       </Row>
     </NotesStyled>

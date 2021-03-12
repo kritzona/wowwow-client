@@ -40,19 +40,30 @@ const initialState: INoteState = {
 export const noteReducer = (state = initialState, action: TNoteAction) => {
   switch (action.type) {
     case ENoteActionNames.ADD_ITEM:
-      const item = action.payload.item
-      state.items = [...state.items, item]
+      state.items = [...state.items, action.payload.item]
+
       return state
     case ENoteActionNames.ADD_ITEMS:
-      const items = action.payload.items
-      state.items = [...items]
+      state.items = [...action.payload.items]
+
       return state
     case ENoteActionNames.REMOVE_ITEM:
-      const id = action.payload.id
-      state.items = state.items.filter((item) => item.id !== id)
+      state.items = state.items.filter((item) => item.id !== action.payload.id)
+
+      return state
+    case ENoteActionNames.TOGGLE_FAVORITE:
+      state.items = state.items.map((item) => {
+        if (item.id === action.payload.id) {
+          item.favorite = !item.favorite
+        }
+
+        return item
+      })
+
       return state
     case ENoteActionNames.RESET:
       state.items = [...initialState.items]
+
       return state
     default:
       return state

@@ -8,12 +8,16 @@ import {
 import CardItem from '../CardItem/CardItem'
 import Text from '../../atoms/Text/Text'
 
-interface IProps {}
+interface IProps {
+  onClick?: () => void
+}
 
 const NoteCreator = (props: IProps) => {
+  const handleClick = () => (props.onClick ? props.onClick() : null)
+
   return (
     <NoteCreatorStyled>
-      <CardItem>
+      <CardItem onClick={() => handleClick()}>
         <NoteCreatorContentStyled>
           <NoteCreatorIconStyled></NoteCreatorIconStyled>
           <NoteCreatorActionTextStyled>

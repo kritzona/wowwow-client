@@ -2,6 +2,7 @@ export enum ENoteActionNames {
   ADD_ITEM = 'notes/ADD_ITEM',
   ADD_ITEMS = 'notes/ADD_ITEMS',
   REMOVE_ITEM = 'notes/REMOVE_ITEM',
+  TOGGLE_FAVORITE = 'notes/TOGGLE_FAVORITE',
   RESET = 'notes/RESET',
 }
 
@@ -29,6 +30,10 @@ export interface INoteRemoveItemAction {
   type: ENoteActionNames.REMOVE_ITEM
   payload: { id: string | number }
 }
+export interface INoteToggleFavoriteAction {
+  type: ENoteActionNames.TOGGLE_FAVORITE
+  payload: { id: string | number }
+}
 export interface INoteResetAction {
   type: ENoteActionNames.RESET
 }
@@ -37,4 +42,5 @@ export type TNoteAction =
   | INoteAddItemAction
   | INoteAddItemsAction
   | INoteRemoveItemAction
+  | INoteToggleFavoriteAction
   | INoteResetAction
