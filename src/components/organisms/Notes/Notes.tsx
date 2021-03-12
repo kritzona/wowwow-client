@@ -5,8 +5,10 @@ import Row from '../../atoms/Row/Row'
 import Column from '../../atoms/Column/Column'
 import NoteCreator from '../../molecules/NoteCreator/NoteCreator'
 import Text from '../../atoms/Text/Text'
+import { INoteItem } from '../../../store/note/types'
 
 interface IProps {
+  items: INoteItem[]
   onOpenNote?: () => void
 }
 
@@ -18,46 +20,20 @@ const Notes = (props: IProps) => {
       <Text type="heading-2">Все заметки</Text>
       <br />
       <Row gutter={true}>
-        <Column
-          size={3}
-          desktopSize={3}
-          laptopSize={3}
-          tabletSize={4}
-          phabletSize={6}
-          mobileSize={6}
-        >
-          <NoteItem onClick={() => handleOpenNote()}></NoteItem>
-        </Column>
-        <Column
-          size={3}
-          desktopSize={3}
-          laptopSize={3}
-          tabletSize={4}
-          phabletSize={6}
-          mobileSize={6}
-        >
-          <NoteItem></NoteItem>
-        </Column>
-        <Column
-          size={3}
-          desktopSize={3}
-          laptopSize={3}
-          tabletSize={4}
-          phabletSize={6}
-          mobileSize={6}
-        >
-          <NoteItem></NoteItem>
-        </Column>
-        <Column
-          size={3}
-          desktopSize={3}
-          laptopSize={3}
-          tabletSize={4}
-          phabletSize={6}
-          mobileSize={6}
-        >
-          <NoteItem></NoteItem>
-        </Column>
+        {props.items.map((item) => (
+          <Column
+            key={item.id}
+            size={3}
+            desktopSize={3}
+            laptopSize={3}
+            tabletSize={4}
+            phabletSize={6}
+            mobileSize={6}
+          >
+            <NoteItem data={item} onClick={() => handleOpenNote()}></NoteItem>
+          </Column>
+        ))}
+
         <Column
           size={3}
           desktopSize={3}

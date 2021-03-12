@@ -6,16 +6,19 @@ import {
 } from './ThumbNoteStyled'
 import Text from '../../atoms/Text/Text'
 
-interface IProps {}
+interface IProps {
+  title: string
+  content: string
+}
 
 const ThumbNote = (props: IProps) => {
   return (
     <ThumbNoteStyled>
       <ThumbNoteTitleStyled>
-        <Text type="subtitle-1">Заметка</Text>
+        <Text type="subtitle-1">{props.title}</Text>
       </ThumbNoteTitleStyled>
       <ThumbNoteContentStyled>
-        <Text type="caption">Чо то там где то там, а вот и еще текст...</Text>
+        <Text type="caption">{props.content}</Text>
       </ThumbNoteContentStyled>
     </ThumbNoteStyled>
   )

@@ -1,7 +1,40 @@
 import { INoteState, TNoteAction, ENoteActionNames } from './types'
 
 const initialState: INoteState = {
-  items: [],
+  items: [
+    {
+      id: 0,
+      title: 'Заметка 1',
+      content: 'Lorem lorem lorem',
+      favorite: false,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    },
+    {
+      id: 1,
+      title: 'Заметка 2',
+      content: 'Lorem lorem lorem',
+      favorite: true,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    },
+    {
+      id: 2,
+      title: 'Заметка 3',
+      content: 'Lorem lorem lorem',
+      favorite: true,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    },
+    {
+      id: 3,
+      title: 'Заметка 4',
+      content: 'Lorem lorem lorem',
+      favorite: false,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    },
+  ],
 }
 
 export const noteReducer = (state = initialState, action: TNoteAction) => {

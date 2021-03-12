@@ -5,7 +5,7 @@ import Content from './components/organisms/Content/Content'
 import BottomNavBar from './components/organisms/BottomNavBar/BottomNavBar'
 
 import Modal from './components/molecules/Modal/Modal'
-import Notes from './components/organisms/Notes/Notes'
+import NotesContainer from './containers/NotesContainer/NotesContainer'
 
 interface IProps {}
 
@@ -22,7 +22,7 @@ const App = (props: IProps) => {
     <AppStyled>
       <Header></Header>
       <Content>
-        <Notes onOpenNote={() => handleOpenNote()}></Notes>
+        <NotesContainer onOpenNote={() => handleOpenNote()}></NotesContainer>
       </Content>
       <BottomNavBar></BottomNavBar>
       {shownModal && <Modal onClose={() => handleCloseModal()}></Modal>}
