@@ -34,7 +34,9 @@ const NoteItem = (props: IProps) => {
         ></ThumbNote>
       </CardItem>
       <NoteItemLikeStatusStyled>
-        {props.data.favorite && <LikeStatus></LikeStatus>}
+        {props.data.favorite && (
+          <LikeStatus onClick={() => handleToggleFavorite()}></LikeStatus>
+        )}
       </NoteItemLikeStatusStyled>
       <NoteItemCtxMenuStyled>
         <CardCtxMenu

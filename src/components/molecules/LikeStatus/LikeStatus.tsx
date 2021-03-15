@@ -1,10 +1,18 @@
 import React from 'react'
 import { LikeStatusStyled } from './LikeStatusStyled'
 
-interface IProps {}
+interface IProps {
+  onClick?: () => void
+}
 
 const LikeStatus = (props: IProps) => {
-  return <LikeStatusStyled></LikeStatusStyled>
+  const handleClick = () => {
+    setTimeout(() => {
+      if (props.onClick) props.onClick()
+    }, 100)
+  }
+
+  return <LikeStatusStyled onClick={() => handleClick()}></LikeStatusStyled>
 }
 
 export default LikeStatus
