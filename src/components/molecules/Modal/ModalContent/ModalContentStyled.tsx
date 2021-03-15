@@ -1,6 +1,8 @@
 import styled, { css, DefaultTheme } from 'styled-components'
 
-interface IProps {}
+interface IProps {
+  theme: DefaultTheme
+}
 
 export const ModalContentStyled = styled.div<IProps>`
   ${({ theme }) => css`

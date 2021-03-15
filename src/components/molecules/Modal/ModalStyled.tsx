@@ -1,8 +1,10 @@
 import styled, { css, DefaultTheme } from 'styled-components'
 
-interface IProps {}
+interface IProps {
+  theme: DefaultTheme
+}
 
-export const ModalStyled = styled.div`
+export const ModalStyled = styled.div<IProps>`
   ${({ theme }) => css`
     position: fixed;
     top: 0;
@@ -12,14 +14,14 @@ export const ModalStyled = styled.div`
     z-index: 1000000;
   `}
 `
-export const ModalWrapperStyled = styled.div`
+export const ModalWrapperStyled = styled.div<IProps>`
   ${({ theme }) => css`
     min-height: 100px;
     background-color: ${theme.colors._100Color};
     box-shadow: ${theme.effects._08dp};
   `}
 `
-export const ModalBackgroundStyled = styled.div`
+export const ModalBackgroundStyled = styled.div<IProps>`
   ${({ theme }) => css`
     position: absolute;
     top: 0;
