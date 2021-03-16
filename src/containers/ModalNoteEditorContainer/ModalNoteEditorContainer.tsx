@@ -18,7 +18,10 @@ const ModalNoteEditorContainer = () => {
   return (
     <React.Fragment>
       {modalNoteEditorContext.shown && (
-        <Modal title="Заметка" onClose={() => handleCloseModal()}>
+        <Modal
+          title={modalNoteEditorContext.title}
+          onClose={() => handleCloseModal()}
+        >
           <NoteEditor></NoteEditor>
         </Modal>
       )}

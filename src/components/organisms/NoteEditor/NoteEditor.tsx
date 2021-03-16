@@ -18,13 +18,13 @@ const NoteEditor = (props: IProps) => {
     <NoteEditorStyled>
       <NoteEditorTitleStyled>
         <NoteEditorLabelStyled>
-          <Text type="subtitle-1">Название:</Text>
+          <Text type="caption">Название:</Text>
         </NoteEditorLabelStyled>
         <InputTitle placeholder="Введите название"></InputTitle>
       </NoteEditorTitleStyled>
       <NoteEditorContentStyled>
         <NoteEditorLabelStyled>
-          <Text type="subtitle-1">Содержание:</Text>
+          <Text type="caption">Содержание:</Text>
         </NoteEditorLabelStyled>
         <InputContent placeholder="Введите содержание"></InputContent>
       </NoteEditorContentStyled>
