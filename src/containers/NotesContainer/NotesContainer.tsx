@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '../../store/store'
 import Notes from '../../components/organisms/Notes/Notes'
@@ -7,14 +7,22 @@ import {
   noteRemoveItemAction,
   noteToggleFavoriteAction,
 } from '../../store/note/actions'
+import { ModalNoteEditorContext } from '../../contexts/ModalNoteEditorContext'
 
 interface IProps {
   onOpenNote?: () => void
 }
 
 const NotesContainer = (props: IProps) => {
+  const modalNoteEditorContext = useContext(ModalNoteEditorContext)
   const noteItems = useSelector((state: RootState) => state.note.items)
   const dispatch = useDispatch()
+
+  const showModal = () => modalNoteEditorContext.showModal()
+  const hideModal = () => modalNoteEditorContext.hideModal()
+
+  const handleOpenNote = () => showModal()
+  const handleCloseModal = () => hideModal()
 
   const handleAdd = () =>
     dispatch(
@@ -31,8 +39,6 @@ const NotesContainer = (props: IProps) => {
     dispatch(noteRemoveItemAction(id))
   const handleToggleFavorite = (id: string | number) =>
     dispatch(noteToggleFavoriteAction(id))
-
-  const handleOpenNote = () => (props.onOpenNote ? props.onOpenNote() : null)
 
   return (
     <Notes

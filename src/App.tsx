@@ -4,33 +4,51 @@ import Header from './components/organisms/Header/Header'
 import Content from './components/organisms/Content/Content'
 import BottomNavBar from './components/organisms/BottomNavBar/BottomNavBar'
 
-import Modal from './components/molecules/Modal/Modal'
 import NotesContainer from './containers/NotesContainer/NotesContainer'
-import NoteEditor from './components/organisms/NoteEditor/NoteEditor'
+import ModalNoteEditorContainer from './containers/ModalNoteEditorContainer/ModalNoteEditorContainer'
+
+import { ModalNoteEditorContext } from './contexts/ModalNoteEditorContext'
+import { ModalNoteCreateContext } from './contexts/ModalNoteCreateContext'
 
 interface IProps {}
 
 const App = (props: IProps) => {
-  const [shownModal, setShownModal] = useState(false)
+  const [modalNoteEditorShown, setModalNoteEditorShown] = useState(false)
+  const [modalNoteEditorNoteId, setModalNoteEditorNoteId] = useState<
+    string | number
+  >(-1)
 
-  const showModal = () => setShownModal(true)
-  const hideModal = () => setShownModal(false)
-
-  const handleOpenNote = () => showModal()
-  const handleCloseModal = () => hideModal()
+  const [modalNoteCreateShown, setModalNoteCreateShown] = useState(false)
 
   return (
     <AppStyled>
-      <Header></Header>
-      <Content>
-        <NotesContainer onOpenNote={() => handleOpenNote()}></NotesContainer>
-      </Content>
-      <BottomNavBar></BottomNavBar>
-      {shownModal && (
-        <Modal title="Заметка" onClose={() => handleCloseModal()}>
-          <NoteEditor></NoteEditor>
-        </Modal>
-      )}
+      <ModalNoteEditorContext.Provider
+        value={{
+          title: 'Заметка',
+          shown: modalNoteEditorShown,
+          noteId: modalNoteEditorNoteId,
+          showModal: () => setModalNoteEditorShown(true),
+          hideModal: () => setModalNoteEditorShown(false),
+          setNoteId: (id: string | number) => setModalNoteEditorNoteId(id),
+        }}
+      >
+        <ModalNoteCreateContext.Provider
+          value={{
+            title: 'Новая заметка',
+            shown: modalNoteCreateShown,
+            showModal: () => setModalNoteCreateShown(true),
+            hideModal: () => setModalNoteCreateShown(false),
+          }}
+        >
+          <Header></Header>
+          <Content>
+            <NotesContainer></NotesContainer>
+          </Content>
+          <BottomNavBar></BottomNavBar>
+
+          <ModalNoteEditorContainer></ModalNoteEditorContainer>
+        </ModalNoteCreateContext.Provider>
+      </ModalNoteEditorContext.Provider>
     </AppStyled>
   )
 }
