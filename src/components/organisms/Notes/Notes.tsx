@@ -9,14 +9,15 @@ import { INoteItem } from '../../../store/note/types'
 
 interface IProps {
   items: INoteItem[]
-  onOpenNote?: () => void
+  onOpenNote?: (id: string | number) => void
   onAdd?: () => void
   onRemove?: (id: string | number) => void
   onToggleFavorite?: (id: string | number) => void
 }
 
 const Notes = (props: IProps) => {
-  const handleOpenNote = () => (props.onOpenNote ? props.onOpenNote() : null)
+  const handleOpenNote = (id: string | number) =>
+    props.onOpenNote ? props.onOpenNote(id) : null
   const handleNoteCreatorClick = () => (props.onAdd ? props.onAdd() : null)
   const handleRemove = (id: string | number) =>
     props.onRemove ? props.onRemove(id) : null
@@ -40,7 +41,7 @@ const Notes = (props: IProps) => {
           >
             <NoteItem
               data={item}
-              onClick={() => handleOpenNote()}
+              onClick={() => handleOpenNote(item.id)}
               onRemove={() => handleRemove(item.id)}
               onToggleFavorite={() => handleToggleFavorite(item.id)}
             ></NoteItem>

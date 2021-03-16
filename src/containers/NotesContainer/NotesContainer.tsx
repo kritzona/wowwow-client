@@ -18,10 +18,11 @@ const NotesContainer = (props: IProps) => {
   const noteItems = useSelector((state: RootState) => state.note.items)
   const dispatch = useDispatch()
 
-  const showModal = () => modalNoteEditorContext.showModal()
+  const showModal = (id: string | number) =>
+    modalNoteEditorContext.showModal(id)
   const hideModal = () => modalNoteEditorContext.hideModal()
 
-  const handleOpenNote = () => showModal()
+  const handleOpenNote = (id: string | number) => showModal(id)
   const handleCloseModal = () => hideModal()
 
   const handleAdd = () =>
@@ -43,7 +44,7 @@ const NotesContainer = (props: IProps) => {
   return (
     <Notes
       items={noteItems}
-      onOpenNote={() => handleOpenNote()}
+      onOpenNote={(id: string | number) => handleOpenNote(id)}
       onAdd={() => handleAdd()}
       onRemove={(id: string | number) => handleRemove(id)}
       onToggleFavorite={(id: string | number) => handleToggleFavorite(id)}

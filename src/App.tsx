@@ -27,9 +27,13 @@ const App = (props: IProps) => {
           title: 'Заметка',
           shown: modalNoteEditorShown,
           noteId: modalNoteEditorNoteId,
-          showModal: () => setModalNoteEditorShown(true),
+          showModal: (id: string | number) => {
+            setModalNoteEditorNoteId(id)
+            setModalNoteEditorShown(true)
+
+            return
+          },
           hideModal: () => setModalNoteEditorShown(false),
-          setNoteId: (id: string | number) => setModalNoteEditorNoteId(id),
         }}
       >
         <ModalNoteCreateContext.Provider

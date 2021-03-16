@@ -1,28 +1,33 @@
 import React, { useContext, useState, useEffect } from 'react'
+import { useSelector } from 'react-redux'
 import Modal from '../../components/molecules/Modal/Modal'
 import NoteEditor from '../../components/organisms/NoteEditor/NoteEditor'
 import { ModalNoteEditorContext } from '../../contexts/ModalNoteEditorContext'
+import { RootState } from '../../store/store'
 
 interface IProps {}
 
 const ModalNoteEditorContainer = () => {
-  const [shown, setShown] = useState(false)
   const modalNoteEditorContext = useContext(ModalNoteEditorContext)
+  const changedNote = useSelector((state: RootState) =>
+    state.note.items.find((item) => item.id === modalNoteEditorContext.noteId),
+  )
 
-  const showModal = () => modalNoteEditorContext.showModal()
   const hideModal = () => modalNoteEditorContext.hideModal()
 
-  const handleOpenNote = () => showModal()
   const handleCloseModal = () => hideModal()
 
   return (
     <React.Fragment>
-      {modalNoteEditorContext.shown && (
+      {modalNoteEditorContext.shown && changedNote && (
         <Modal
           title={modalNoteEditorContext.title}
           onClose={() => handleCloseModal()}
         >
-          <NoteEditor></NoteEditor>
+          <NoteEditor
+            title={changedNote.title}
+            content={changedNote.content}
+          ></NoteEditor>
         </Modal>
       )}
     </React.Fragment>

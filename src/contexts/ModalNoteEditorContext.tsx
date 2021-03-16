@@ -4,9 +4,8 @@ interface IModalNoteEditorContext {
   title: string
   shown: boolean
   noteId: string | number
-  showModal: () => void
+  showModal: (id: string | number) => void
   hideModal: () => void
-  setNoteId: (id: string | number) => void
 }
 
 export const ModalNoteEditorContext = React.createContext<IModalNoteEditorContext>(
@@ -14,8 +13,7 @@ export const ModalNoteEditorContext = React.createContext<IModalNoteEditorContex
     title: 'Заметка',
     shown: false,
     noteId: -1,
-    showModal: () => {},
+    showModal: (id: string | number) => {},
     hideModal: () => {},
-    setNoteId: (id: string | number) => {},
   },
 )
