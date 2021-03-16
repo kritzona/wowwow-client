@@ -20,6 +20,11 @@ const GlobalStyle = createGlobalStyle<IProps>`
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
+
+    input,
+    textarea {
+      font-family: 'Roboto', sans-serif;
+    }
   `}
 `
 

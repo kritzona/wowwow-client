@@ -8,6 +8,7 @@ import {
 import ModalClose from '../ModalClose/ModalClose'
 
 interface IProps {
+  title: string
   onClose?: () => void
 }
 
@@ -17,7 +18,7 @@ const ModalHeader = (props: IProps) => {
   return (
     <ModalHeaderStyled>
       <ModalHeaderWestStyled>
-        <Text type="heading-2">Модалка</Text>
+        <Text type="heading-2">{props.title}</Text>
       </ModalHeaderWestStyled>
       <ModalHeaderEastStyled>
         <ModalClose onClick={() => handleCloseClick()}></ModalClose>

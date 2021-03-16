@@ -11,6 +11,7 @@ import ModalHeader from './ModalHeader/ModalHeader'
 import ModalContent from './ModalContent/ModalContent'
 
 interface IProps {
+  title: string
   children?: React.ReactNode
   onClose?: () => void
 }
@@ -27,7 +28,10 @@ const Modal = (props: IProps) => {
         <ModalWrapperStyled>
           <Row>
             <Column size={12}>
-              <ModalHeader onClose={() => handleClose()}></ModalHeader>
+              <ModalHeader
+                title={props.title}
+                onClose={() => handleClose()}
+              ></ModalHeader>
             </Column>
           </Row>
           <Row>

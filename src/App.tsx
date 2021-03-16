@@ -27,7 +27,7 @@ const App = (props: IProps) => {
       </Content>
       <BottomNavBar></BottomNavBar>
       {shownModal && (
-        <Modal onClose={() => handleCloseModal()}>
+        <Modal title="Заметка" onClose={() => handleCloseModal()}>
           <NoteEditor></NoteEditor>
         </Modal>
       )}
