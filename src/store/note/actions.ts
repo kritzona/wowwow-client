@@ -4,6 +4,7 @@ import {
   INoteAddItemsAction,
   INoteItem,
   INoteRemoveItemAction,
+  INoteEditItemAction,
   INoteResetAction,
   INoteToggleFavoriteAction,
 } from './types'
@@ -23,6 +24,14 @@ export const noteRemoveItemAction = (
 ): INoteRemoveItemAction => ({
   type: ENoteActionNames.REMOVE_ITEM,
   payload: { id },
+})
+export const noteEditItemAction = (
+  id: string | number,
+  title: string,
+  content: string,
+): INoteEditItemAction => ({
+  type: ENoteActionNames.EDIT_ITEM,
+  payload: { id, title, content },
 })
 export const noteToggleFavoriteAction = (
   id: string | number,

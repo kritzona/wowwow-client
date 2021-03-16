@@ -51,6 +51,21 @@ export const noteReducer = (state = initialState, action: TNoteAction) => {
       state.items = state.items.filter((item) => item.id !== action.payload.id)
 
       return state
+    case ENoteActionNames.EDIT_ITEM:
+      state.items = state.items.map((item) => {
+        if (item.id === action.payload.id) {
+          item = {
+            ...item,
+            title: action.payload.title,
+            content: action.payload.content,
+            updatedAt: new Date(),
+          }
+        }
+
+        return item
+      })
+
+      return state
     case ENoteActionNames.TOGGLE_FAVORITE:
       state.items = state.items.map((item) => {
         if (item.id === action.payload.id) {

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Button from '../../atoms/Button/Button'
 import InputContent from '../../atoms/InputContent/InputContent'
 import InputTitle from '../../atoms/InputTitle/InputTitle'
@@ -12,20 +12,41 @@ import {
 } from './NoteEditorStyled'
 
 interface IProps {
+  id: string | number
   title: string
   content: string
+  onSave?: (id: string | number, title: string, content: string) => void
+  onCancel?: () => void
 }
 
 const NoteEditor = (props: IProps) => {
+  const [inputTitle, setInputTitle] = useState(props.title)
+  const [inputContent, setInputContent] = useState(props.content)
+
+  const handleInputTitleChange = (value: string) => setInputTitle(value)
+  const handleInputContentChange = (value: string) => setInputContent(value)
+
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault()
+
+    if (props.onSave) props.onSave(props.id, inputTitle, inputContent)
+  }
+  const handleButtonCancelClick = () => {
+    if (props.onCancel) props.onCancel()
+  }
+
   return (
-    <NoteEditorStyled>
+    <NoteEditorStyled
+      onSubmit={(event: React.FormEvent) => handleSubmit(event)}
+    >
       <NoteEditorTitleStyled>
         <NoteEditorLabelStyled>
           <Text type="caption">Название:</Text>
         </NoteEditorLabelStyled>
         <InputTitle
           placeholder="Введите название"
-          value={props.title}
+          value={inputTitle}
+          onChange={(value) => handleInputTitleChange(value)}
         ></InputTitle>
       </NoteEditorTitleStyled>
       <NoteEditorContentStyled>
@@ -34,12 +55,15 @@ const NoteEditor = (props: IProps) => {
         </NoteEditorLabelStyled>
         <InputContent
           placeholder="Введите содержание"
-          value={props.content}
+          value={inputContent}
+          onChange={(value) => handleInputContentChange(value)}
         ></InputContent>
       </NoteEditorContentStyled>
       <NoteEditorSaveStyled>
-        <Button>Сохранить</Button>
-        <Button color="accent">Отмена</Button>
+        <Button type="submit">Сохранить</Button>
+        <Button color="accent" onClick={() => handleButtonCancelClick()}>
+          Отмена
+        </Button>
       </NoteEditorSaveStyled>
     </NoteEditorStyled>
   )

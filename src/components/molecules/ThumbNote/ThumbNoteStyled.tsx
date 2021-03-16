@@ -16,6 +16,7 @@ export const ThumbNoteContentStyled = styled.div<IProps>`
   ${({ theme }) => css`
     width: 70%;
     color: ${theme.colors._600Color};
+    word-break: break-all;
 
     @media ${theme.mediaQueries.tablet} {
       width: 80%;
