@@ -12,13 +12,20 @@ interface IProps {
 }
 
 const ThumbNote = (props: IProps) => {
+  const formatTitle = (title: string) => {
+    return `${title.slice(0, 12)}${title.length >= 12 ? '...' : ''}`
+  }
+  const formatContent = (title: string) => {
+    return `${title.slice(0, 30)}${title.length >= 30 ? '...' : ''}`
+  }
+
   return (
     <ThumbNoteStyled>
       <ThumbNoteTitleStyled>
-        <Text type="subtitle-1">{props.title}</Text>
+        <Text type="subtitle-1">{formatTitle(props.title)}</Text>
       </ThumbNoteTitleStyled>
       <ThumbNoteContentStyled>
-        <Text type="caption">{props.content}</Text>
+        <Text type="caption">{formatContent(props.content)}</Text>
       </ThumbNoteContentStyled>
     </ThumbNoteStyled>
   )
