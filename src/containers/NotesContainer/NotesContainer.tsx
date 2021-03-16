@@ -29,8 +29,8 @@ const NotesContainer = (props: IProps) => {
     dispatch(
       noteAddItemAction({
         id: Date.now(),
-        title: `Заметка ${Number(Math.random() * 100).toFixed(0)}`,
-        content: 'Lorem lorem lorem',
+        title: `Новая заметка`,
+        content: '',
         favorite: false,
         createdAt: new Date(),
         updatedAt: new Date(),
