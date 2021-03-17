@@ -9,9 +9,9 @@ import HomePrimaryIconSource from '../../../assets/icons/home-primary-icon.svg'
 import HomeAccentIconSource from '../../../assets/icons/home-accent-icon.svg'
 import HomeWhiteIconSource from '../../../assets/icons/home-white-icon.svg'
 
-import NotesPrimaryIconSource from '../../../assets/icons/notes-primary-icon.svg'
-import NotesAccentIconSource from '../../../assets/icons/notes-accent-icon.svg'
-import NotesWhiteIconSource from '../../../assets/icons/notes-white-icon.svg'
+import HeartPrimaryIconSource from '../../../assets/icons/heart-primary-icon.svg'
+import HeartAccentIconSource from '../../../assets/icons/heart-accent-icon.svg'
+import HeartWhiteIconSource from '../../../assets/icons/heart-white-icon.svg'
 
 import AddNotePrimaryIconSource from '../../../assets/icons/add-note-primary-icon.svg'
 import AddNoteAccentIconSource from '../../../assets/icons/add-note-accent-icon.svg'
@@ -38,10 +38,10 @@ const BottomNavBar = (props: IProps) => {
           </Column>
           <Column desktopSize={3}>
             <NavBarItem
-              title="Заметки"
-              primaryIconSource={NotesPrimaryIconSource}
-              accentIconSource={NotesAccentIconSource}
-              whiteIconSource={NotesWhiteIconSource}
+              title="Избранное"
+              primaryIconSource={HeartPrimaryIconSource}
+              accentIconSource={HeartAccentIconSource}
+              whiteIconSource={HeartWhiteIconSource}
             ></NavBarItem>
           </Column>
           <Column desktopSize={3}>
