@@ -8,6 +8,7 @@ import {
   noteToggleFavoriteAction,
 } from '../../store/note/actions'
 import { ModalNoteEditorContext } from '../../contexts/ModalNoteEditorContext'
+import { INoteItem } from '../../store/note/types'
 
 interface IProps {
   onOpenNote?: () => void
@@ -15,7 +16,11 @@ interface IProps {
 
 const NotesContainer = (props: IProps) => {
   const modalNoteEditorContext = useContext(ModalNoteEditorContext)
-  const noteItems = useSelector((state: RootState) => state.note.items)
+  const noteItems = useSelector((state: RootState) =>
+    state.note.items.sort((itemA: INoteItem, itemB: INoteItem) => {
+      return itemB.updatedAt.getTime() - itemA.updatedAt.getTime()
+    }),
+  )
   const dispatch = useDispatch()
 
   const showModal = (id: string | number) =>
