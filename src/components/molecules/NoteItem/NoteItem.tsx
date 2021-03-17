@@ -45,7 +45,7 @@ const NoteItem = (props: IProps) => {
         ></CardCtxMenu>
       </NoteItemCtxMenuStyled>
       <NoteItemDateLabelStyled>
-        <DateLabel>24.02.2021 14:58</DateLabel>
+        <DateLabel date={props.data.updatedAt}></DateLabel>
       </NoteItemDateLabelStyled>
     </NoteItemStyled>
   )

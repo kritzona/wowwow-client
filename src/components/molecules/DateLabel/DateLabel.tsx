@@ -1,15 +1,16 @@
 import React from 'react'
 import Text from '../../atoms/Text/Text'
 import { DateLabelStyled } from './DateLabelStyled'
+import { formatDate } from '../../../utils/date'
 
 interface IProps {
-  children?: React.ReactNode
+  date: Date
 }
 
 const DateLabel = (props: IProps) => {
   return (
     <DateLabelStyled>
-      <Text type="overline">{props.children}</Text>
+      <Text type="overline">{formatDate(props.date)}</Text>
     </DateLabelStyled>
   )
 }
