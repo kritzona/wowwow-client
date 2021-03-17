@@ -28,6 +28,7 @@ const GlobalStyle = createGlobalStyle<IProps>`
 
     a {
       text-decoration: none;
+      -webkit-tap-highlight-color: transparent;
     }
   `}
 `
