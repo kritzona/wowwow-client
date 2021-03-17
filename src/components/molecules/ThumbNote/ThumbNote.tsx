@@ -5,6 +5,7 @@ import {
   ThumbNoteTitleStyled,
 } from './ThumbNoteStyled'
 import Text from '../../atoms/Text/Text'
+import { useMediaQuery } from 'react-responsive'
 
 interface IProps {
   title: string
@@ -12,11 +13,42 @@ interface IProps {
 }
 
 const ThumbNote = (props: IProps) => {
+  const isDesktop = useMediaQuery({ minWidth: 1200 })
+  const isLaptop = useMediaQuery({ minWidth: 992, maxWidth: 1199 })
+  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 991 })
+  const isPhablet = useMediaQuery({ minWidth: 540, maxWidth: 767 })
+  const isMobile = useMediaQuery({ minWidth: 350, maxWidth: 539 })
+  const isVerySmallDevice = useMediaQuery({ maxWidth: 349 })
+
   const formatTitle = (title: string) => {
-    return `${title.slice(0, 12)}${title.length >= 12 ? '...' : ''}`
+    let maxLength = 12
+
+    if (isDesktop) {
+      maxLength = 17
+    } else if (isLaptop) {
+      maxLength = 17
+    } else if (isTablet) {
+      maxLength = 17
+    } else if (isPhablet) {
+      maxLength = 17
+    } else if (isMobile) {
+      maxLength = 12
+    } else if (isVerySmallDevice) {
+      maxLength = 10
+    }
+
+    return `${title.slice(0, maxLength)}${
+      title.length >= maxLength ? '...' : ''
+    }`
   }
-  const formatContent = (title: string) => {
-    return `${title.slice(0, 30)}${title.length >= 30 ? '...' : ''}`
+  const formatContent = (content: string) => {
+    let maxLength = 35
+
+    if (isVerySmallDevice) maxLength = 30
+
+    return `${content.slice(0, maxLength)}${
+      content.length >= maxLength ? '...' : ''
+    }`
   }
 
   return (
