@@ -12,7 +12,7 @@ export const fetchNotesFromStorage = (): INoteItem[] => {
   const notesJSON = localStorage.getItem('wowwow:notes')
 
   if (typeof notesJSON === 'string') {
-    const notes = <INoteItem[]>JSON.parse(notesJSON)
+    const notes = JSON.parse(notesJSON) as INoteItem[]
     const notesWithNormalDate = notes.map((note) => {
       note.createdAt = new Date(note.createdAt)
       note.updatedAt = new Date(note.updatedAt)

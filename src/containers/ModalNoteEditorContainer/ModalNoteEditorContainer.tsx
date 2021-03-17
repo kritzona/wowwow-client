@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react'
+import React, { useContext } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Modal from '../../components/molecules/Modal/Modal'
 import NoteEditor from '../../components/organisms/NoteEditor/NoteEditor'
@@ -8,7 +8,7 @@ import { RootState } from '../../store/store'
 
 interface IProps {}
 
-const ModalNoteEditorContainer = () => {
+const ModalNoteEditorContainer = (props: IProps) => {
   const modalNoteEditorContext = useContext(ModalNoteEditorContext)
   const changedNote = useSelector((state: RootState) =>
     state.note.items.find((item) => item.id === modalNoteEditorContext.noteId),

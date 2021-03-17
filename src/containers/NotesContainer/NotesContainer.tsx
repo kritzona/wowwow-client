@@ -25,10 +25,8 @@ const NotesContainer = (props: IProps) => {
 
   const showModal = (id: string | number) =>
     modalNoteEditorContext.showModal(id)
-  const hideModal = () => modalNoteEditorContext.hideModal()
 
   const handleOpenNote = (id: string | number) => showModal(id)
-  const handleCloseModal = () => hideModal()
 
   const handleAdd = () =>
     dispatch(
