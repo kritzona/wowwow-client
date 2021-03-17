@@ -8,7 +8,6 @@ import ReactDOM from 'react-dom'
 import App from './App'
 import { ThemeProvider } from 'styled-components'
 import themes from './themes/themes'
-
 import './index.css'
 import GlobalStyle from './themes/GlobalTheme/GlobalTheme'
 import { Provider } from 'react-redux'

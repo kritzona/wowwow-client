@@ -25,6 +25,10 @@ const GlobalStyle = createGlobalStyle<IProps>`
     textarea {
       font-family: 'Roboto', sans-serif;
     }
+
+    a {
+      text-decoration: none;
+    }
   `}
 `
 

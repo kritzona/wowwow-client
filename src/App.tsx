@@ -1,14 +1,16 @@
 import React, { useState } from 'react'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import AppStyled from './AppStyled'
 import Header from './components/organisms/Header/Header'
 import Content from './components/organisms/Content/Content'
 import BottomNavBar from './components/organisms/BottomNavBar/BottomNavBar'
 
-import NotesContainer from './containers/NotesContainer/NotesContainer'
 import ModalNoteEditorContainer from './containers/ModalNoteEditorContainer/ModalNoteEditorContainer'
 
 import { ModalNoteEditorContext } from './contexts/ModalNoteEditorContext'
 import { ModalNoteCreateContext } from './contexts/ModalNoteCreateContext'
+import HomeView from './views/HomeView/HomeView'
+import FavoriteView from './views/FavoriteView/FavoriteView'
 
 interface IProps {}
 
@@ -22,37 +24,46 @@ const App = (props: IProps) => {
 
   return (
     <AppStyled>
-      <ModalNoteEditorContext.Provider
-        value={{
-          title: 'Заметка',
-          shown: modalNoteEditorShown,
-          noteId: modalNoteEditorNoteId,
-          showModal: (id: string | number) => {
-            setModalNoteEditorNoteId(id)
-            setModalNoteEditorShown(true)
-
-            return
-          },
-          hideModal: () => setModalNoteEditorShown(false),
-        }}
-      >
-        <ModalNoteCreateContext.Provider
+      <Router>
+        <ModalNoteEditorContext.Provider
           value={{
-            title: 'Новая заметка',
-            shown: modalNoteCreateShown,
-            showModal: () => setModalNoteCreateShown(true),
-            hideModal: () => setModalNoteCreateShown(false),
+            title: 'Заметка',
+            shown: modalNoteEditorShown,
+            noteId: modalNoteEditorNoteId,
+            showModal: (id: string | number) => {
+              setModalNoteEditorNoteId(id)
+              setModalNoteEditorShown(true)
+
+              return
+            },
+            hideModal: () => setModalNoteEditorShown(false),
           }}
         >
-          <Header></Header>
-          <Content>
-            <NotesContainer></NotesContainer>
-          </Content>
-          <BottomNavBar></BottomNavBar>
+          <ModalNoteCreateContext.Provider
+            value={{
+              title: 'Новая заметка',
+              shown: modalNoteCreateShown,
+              showModal: () => setModalNoteCreateShown(true),
+              hideModal: () => setModalNoteCreateShown(false),
+            }}
+          >
+            <Header></Header>
+            <Content>
+              <Switch>
+                <Route path="/" exact>
+                  <HomeView></HomeView>
+                </Route>
+                <Route path="/favorite">
+                  <FavoriteView></FavoriteView>
+                </Route>
+              </Switch>
+            </Content>
+            <BottomNavBar></BottomNavBar>
 
-          <ModalNoteEditorContainer></ModalNoteEditorContainer>
-        </ModalNoteCreateContext.Provider>
-      </ModalNoteEditorContext.Provider>
+            <ModalNoteEditorContainer></ModalNoteEditorContainer>
+          </ModalNoteCreateContext.Provider>
+        </ModalNoteEditorContext.Provider>
+      </Router>
     </AppStyled>
   )
 }

@@ -8,6 +8,8 @@ import Text from '../../atoms/Text/Text'
 import { INoteItem } from '../../../store/note/types'
 
 interface IProps {
+  title: string
+  visible: 'all' | 'only-favorite'
   items: INoteItem[]
   onOpenNote?: (id: string | number) => void
   onAdd?: () => void
@@ -26,9 +28,30 @@ const Notes = (props: IProps) => {
 
   return (
     <NotesStyled>
-      <Text type="heading-2">Все заметки</Text>
+      <Text type="heading-2">{props.title}</Text>
       <br />
+      {props.items.length === 0 && props.visible === 'only-favorite' && (
+        <React.Fragment>
+          <Text type="subtitle-1">
+            К сожалению, список избранных заметок пуст
+          </Text>
+          <br />
+          <br />
+        </React.Fragment>
+      )}
       <Row gutter={true}>
+        {props.visible === 'all' && (
+          <Column
+            size={3}
+            desktopSize={3}
+            laptopSize={3}
+            tabletSize={4}
+            phabletSize={6}
+            mobileSize={6}
+          >
+            <NoteCreator onClick={() => handleNoteCreatorClick()}></NoteCreator>
+          </Column>
+        )}
         {props.items.map((item) => (
           <Column
             key={item.id}
@@ -47,17 +70,6 @@ const Notes = (props: IProps) => {
             ></NoteItem>
           </Column>
         ))}
-
-        <Column
-          size={3}
-          desktopSize={3}
-          laptopSize={3}
-          tabletSize={4}
-          phabletSize={6}
-          mobileSize={6}
-        >
-          <NoteCreator onClick={() => handleNoteCreatorClick()}></NoteCreator>
-        </Column>
       </Row>
     </NotesStyled>
   )

@@ -4,6 +4,7 @@ import Row from '../../atoms/Row/Row'
 import Wrapper from '../../atoms/Wrapper/Wrapper'
 import { BottomNavBarStyled } from './BottomNavBarStyled'
 import NavBarItem from '../../molecules/NavBarItem/NavBarItem'
+import { Link } from 'react-router-dom'
 
 import HomePrimaryIconSource from '../../../assets/icons/home-primary-icon.svg'
 import HomeAccentIconSource from '../../../assets/icons/home-accent-icon.svg'
@@ -28,31 +29,27 @@ const BottomNavBar = (props: IProps) => {
     <BottomNavBarStyled>
       <Wrapper>
         <Row>
-          <Column desktopSize={3}>
-            <NavBarItem
-              title="Главная"
-              primaryIconSource={HomePrimaryIconSource}
-              accentIconSource={HomeAccentIconSource}
-              whiteIconSource={HomeWhiteIconSource}
-            ></NavBarItem>
+          <Column desktopSize={4}>
+            <Link to="/">
+              <NavBarItem
+                title="Главная"
+                primaryIconSource={HomePrimaryIconSource}
+                accentIconSource={HomeAccentIconSource}
+                whiteIconSource={HomeWhiteIconSource}
+              ></NavBarItem>
+            </Link>
           </Column>
-          <Column desktopSize={3}>
-            <NavBarItem
-              title="Избранное"
-              primaryIconSource={HeartPrimaryIconSource}
-              accentIconSource={HeartAccentIconSource}
-              whiteIconSource={HeartWhiteIconSource}
-            ></NavBarItem>
+          <Column desktopSize={4}>
+            <Link to="/favorite">
+              <NavBarItem
+                title="Избранное"
+                primaryIconSource={HeartPrimaryIconSource}
+                accentIconSource={HeartAccentIconSource}
+                whiteIconSource={HeartWhiteIconSource}
+              ></NavBarItem>
+            </Link>
           </Column>
-          <Column desktopSize={3}>
-            <NavBarItem
-              title="Создать"
-              primaryIconSource={AddNotePrimaryIconSource}
-              accentIconSource={AddNoteAccentIconSource}
-              whiteIconSource={AddNoteWhiteIconSource}
-            ></NavBarItem>
-          </Column>
-          <Column desktopSize={3}>
+          <Column desktopSize={4}>
             <NavBarItem
               title="О нас"
               primaryIconSource={AboutPrimaryIconSource}

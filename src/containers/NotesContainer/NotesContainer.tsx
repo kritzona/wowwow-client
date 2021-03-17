@@ -11,16 +11,34 @@ import { ModalNoteEditorContext } from '../../contexts/ModalNoteEditorContext'
 import { INoteItem } from '../../store/note/types'
 
 interface IProps {
+  title: string
+  visible: 'all' | 'only-favorite'
   onOpenNote?: () => void
 }
 
 const NotesContainer = (props: IProps) => {
   const modalNoteEditorContext = useContext(ModalNoteEditorContext)
-  const noteItems = useSelector((state: RootState) =>
-    state.note.items.sort((itemA: INoteItem, itemB: INoteItem) => {
-      return itemB.updatedAt.getTime() - itemA.updatedAt.getTime()
-    }),
-  )
+  const noteItems = useSelector((state: RootState) => {
+    const filteredItems = state.note.items
+      .filter((item) => {
+        switch (props.visible) {
+          case 'all':
+            return true
+          case 'only-favorite':
+            if (item.favorite) return true
+            break
+          default:
+            return true
+        }
+
+        return false
+      })
+      .sort((itemA: INoteItem, itemB: INoteItem) => {
+        return itemB.updatedAt.getTime() - itemA.updatedAt.getTime()
+      })
+
+    return filteredItems
+  })
   const dispatch = useDispatch()
 
   const showModal = (id: string | number) =>
@@ -46,6 +64,8 @@ const NotesContainer = (props: IProps) => {
 
   return (
     <Notes
+      title={props.title}
+      visible={props.visible}
       items={noteItems}
       onOpenNote={(id: string | number) => handleOpenNote(id)}
       onAdd={() => handleAdd()}

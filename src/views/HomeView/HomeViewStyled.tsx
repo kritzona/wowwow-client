@@ -4,6 +4,6 @@ interface IProps {
   theme: DefaultTheme
 }
 
-export const HomeStyled = styled.div<IProps>`
+export const HomeViewStyled = styled.div<IProps>`
   ${({ theme }) => css``}
 `
