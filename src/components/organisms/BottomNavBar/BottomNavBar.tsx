@@ -50,12 +50,14 @@ const BottomNavBar = (props: IProps) => {
             </Link>
           </Column>
           <Column desktopSize={4}>
-            <NavBarItem
-              title="О нас"
-              primaryIconSource={AboutPrimaryIconSource}
-              accentIconSource={AboutAccentIconSource}
-              whiteIconSource={AboutWhiteIconSource}
-            ></NavBarItem>
+            <Link to="/about">
+              <NavBarItem
+                title="О прилож."
+                primaryIconSource={AboutPrimaryIconSource}
+                accentIconSource={AboutAccentIconSource}
+                whiteIconSource={AboutWhiteIconSource}
+              ></NavBarItem>
+            </Link>
           </Column>
         </Row>
       </Wrapper>

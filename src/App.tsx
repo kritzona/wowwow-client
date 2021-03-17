@@ -11,6 +11,7 @@ import { ModalNoteEditorContext } from './contexts/ModalNoteEditorContext'
 import { ModalNoteCreateContext } from './contexts/ModalNoteCreateContext'
 import HomeView from './views/HomeView/HomeView'
 import FavoriteView from './views/FavoriteView/FavoriteView'
+import AboutView from './views/AboutView/AboutView'
 
 interface IProps {}
 
@@ -55,6 +56,9 @@ const App = (props: IProps) => {
                 </Route>
                 <Route path="/favorite">
                   <FavoriteView></FavoriteView>
+                </Route>
+                <Route path="/about">
+                  <AboutView></AboutView>
                 </Route>
               </Switch>
             </Content>
