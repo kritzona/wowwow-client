@@ -1,30 +1,26 @@
 import { INoteState, TNoteAction, ENoteActionNames } from './types'
+import { fetchNotesFromStorage, saveNotesInStorage } from '../../utils/storage'
 
+const notesFromStorage = fetchNotesFromStorage()
 const initialState: INoteState = {
-  items: [
-    {
-      id: 0,
-      title: 'Тестовая заметка',
-      content: '',
-      favorite: false,
-      createdAt: new Date(),
-      updatedAt: new Date(),
-    },
-  ],
+  items: notesFromStorage,
 }
 
 export const noteReducer = (state = initialState, action: TNoteAction) => {
   switch (action.type) {
     case ENoteActionNames.ADD_ITEM:
       state.items = [...state.items, action.payload.item]
+      saveNotesInStorage(state.items)
 
       return state
     case ENoteActionNames.ADD_ITEMS:
       state.items = [...action.payload.items]
+      saveNotesInStorage(state.items)
 
       return state
     case ENoteActionNames.REMOVE_ITEM:
       state.items = state.items.filter((item) => item.id !== action.payload.id)
+      saveNotesInStorage(state.items)
 
       return state
     case ENoteActionNames.EDIT_ITEM:
@@ -40,6 +36,7 @@ export const noteReducer = (state = initialState, action: TNoteAction) => {
 
         return item
       })
+      saveNotesInStorage(state.items)
 
       return state
     case ENoteActionNames.TOGGLE_FAVORITE:
@@ -50,10 +47,12 @@ export const noteReducer = (state = initialState, action: TNoteAction) => {
 
         return item
       })
+      saveNotesInStorage(state.items)
 
       return state
     case ENoteActionNames.RESET:
       state.items = [...initialState.items]
+      saveNotesInStorage(state.items)
 
       return state
     default:
