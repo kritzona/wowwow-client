@@ -2,4 +2,4 @@
 
 Веб-приложение для создания заметок на React.
 
-Демо: https://chuckchuck.herokuapp.com/
+Демо: https://wowwownote.herokuapp.com/
